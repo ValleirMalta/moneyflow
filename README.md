@@ -12,3 +12,6 @@ Aplicação de controle financeiro pessoal para gerenciar receitas, despesas e d
 ```bash
 npm install
 npm run dev
+
+## 👨‍💻 Autor
+Desenvolvido por Valleir Malta  
