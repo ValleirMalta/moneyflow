@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .42em;
+      }
+
+      .cls-2 {
+        letter-spacing: .42em;
+      }
+
+      .cls-3 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: #ff31b0;
+      }
+
+      .cls-7 {
+        letter-spacing: .42em;
+      }
+
+      .cls-8 {
+        letter-spacing: .35em;
+      }
+
+      .cls-9 {
+        font-family: Raleway-Heavy, Raleway;
+        font-size: 72.37px;
+        font-weight: 800;
+      }
+
+      .cls-4 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-10 {
+        letter-spacing: .38em;
+      }
+
+      .cls-11, .cls-12 {
+        fill: #e0bf0d;
+      }
+
+      .cls-13 {
+        fill: url(#Degradado_sin_nombre_2-4);
+      }
+
+      .cls-14 {
+        fill: none;
+      }
+
+      .cls-15 {
+        fill: #e09f0d;
+        letter-spacing: 0em;
+      }
+
+      .cls-16 {
+        letter-spacing: .45em;
+      }
+
+      .cls-17 {
+        fill: url(#Degradado_sin_nombre_2-6);
+      }
+
+      .cls-18 {
+        fill: url(#Degradado_sin_nombre_3-2);
+      }
+
+      .cls-19 {
+        fill: url(#Degradado_sin_nombre_2);
+      }
+
+      .cls-20 {
+        letter-spacing: .44em;
+      }
+
+      .cls-21 {
+        fill: url(#Degradado_sin_nombre_2-5);
+      }
+
+      .cls-22 {
+        fill: url(#Degradado_sin_nombre_3);
+      }
+
+      .cls-23 {
+        fill: url(#Degradado_sin_nombre_2-3);
+      }
+
+      .cls-6 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-24 {
+        fill: url(#Degradado_sin_nombre_2-2);
+      }
+
+      .cls-12 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-25 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-26 {
+        font-family: Raleway-SemiBold, Raleway;
+        font-size: 22.36px;
+        font-weight: 600;
+      }
+
+      .cls-27 {
+        letter-spacing: .45em;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-14" x="-540" width="500" height="500"/>
+    </clipPath>
+    <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="-88.04" y1="145.53" x2="-47.04" y2="-23.47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3000ff"/>
+      <stop offset="1" stop-color="#ff31b0"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_3" data-name="Degradado sin nombre 3" x1="43.66" y1="-38.42" x2="-279.34" y2="144.58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb50f"/>
+      <stop offset="1" stop-color="#ff31b0"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_2-2" data-name="Degradado sin nombre 2" x1="250" y1="267.7" x2="250" y2="5.67" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-3" data-name="Degradado sin nombre 2" x1="250" y1="275.48" x2="250" y2="269.97" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-4" data-name="Degradado sin nombre 2" x1="327.89" y1="272.07" x2="327.89" y2="83.64" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-5" data-name="Degradado sin nombre 2" x1="250" y1="85.72" x2="250" y2="73.37" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-6" data-name="Degradado sin nombre 2" x1="172.11" y1="272.07" x2="172.11" y2="83.64" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_3-2" data-name="Degradado sin nombre 3" x1="250" y1="-23.63" x2="250" y2="358.3" xlink:href="#Degradado_sin_nombre_3"/>
+  </defs>
+  <g id="BACKGROUND">
+    <g class="cls-25">
+      <path class="cls-19" d="M-211-42s-24,56,44,78,74,37,69,95S-12,204,59,174,26-86,26-86l-154-36s-61,37-83,80Z"/>
+      <path class="cls-22" d="M-167-39s-13,57,48,56-10,58,0,98,92,20,136-25S56-31-3-52s-137-5-164,13Z"/>
+    </g>
+  </g>
+  <g id="OBJECT">
+    <g>
+      <g>
+        <path class="cls-24" d="M280.56,59.07c-6.89-6.83-15.66-10.71-26.31-11.63v-21.53h-8.51v21.53c-10.65.93-19.42,4.81-26.31,11.63-6.89,6.83-10.33,14.93-10.33,24.31v43.48c0,11.69,3.07,22.34,9.2,31.95l35.6,55.39c5.67,8.91,8.51,19.27,8.51,31.08v30.15c0,9.49-4.11,14.24-12.33,14.24s-12.5-4.75-12.5-14.24v-54h-28.48v49.73c0,9.5,3.44,17.66,10.33,24.48,6.89,6.83,15.65,10.77,26.31,11.81v21.36h8.51v-21.7c10.65-.93,19.42-4.78,26.31-11.55,6.89-6.77,10.33-14.9,10.33-24.4v-45.04c0-11.81-3.06-22.51-9.2-32.12l-35.6-55.39c-5.67-8.91-8.51-19.22-8.51-30.91v-28.59c0-9.49,4.17-14.24,12.5-14.24s12.33,4.75,12.33,14.24v54h28.48v-49.73c0-9.38-3.44-17.48-10.33-24.31Z"/>
+        <g>
+          <g>
+            <path class="cls-23" d="M250,270.07c-1.31,0-2.6-.04-3.89-.1.04,5.49,1.36,5.51,3.98,5.51s3.77-.03,3.81-5.51c-1.29.05-2.59.1-3.9.1Z"/>
+            <path class="cls-13" d="M299.41,83.64v16.39c25.71,16.38,42.82,45.13,42.82,77.82s-17.11,61.43-42.82,77.82v15.49c0,.31-.04.61-.04.92,33.88-17.82,57.05-53.36,57.05-94.23s-23.15-76.38-57.01-94.21Z"/>
+            <path class="cls-21" d="M250.09,73.37c-2.65,0-3.99,0-3.99,5.73v6.62c1.3-.05,2.59-.1,3.9-.1s2.61.04,3.9.1v-6.62c0-5.73-1.27-5.73-3.82-5.73Z"/>
+            <path class="cls-17" d="M200.6,271.15v-15.5c-25.71-16.38-42.82-45.13-42.82-77.81s17.11-61.43,42.82-77.81v-16.39c-33.86,17.83-57.01,53.36-57.01,94.21s23.17,76.4,57.05,94.23c0-.31-.04-.61-.04-.92Z"/>
+          </g>
+          <path class="cls-18" d="M290.89,254.13c0,9.5-3.44,17.63-10.33,24.4-6.89,6.77-15.66,10.62-26.31,11.55v21.7h-8.51v-21.36c-10.65-1.04-19.42-4.98-26.31-11.81-6.89-6.83-10.33-14.99-10.33-24.48v-38.38h28.48v54c0,9.49,4.17,14.24,12.5,14.24s12.33-4.75,12.33-14.24v-41.5c0-11.81-2.84-22.17-8.51-31.08l-35.6-55.39c-6.14-9.61-9.2-20.26-9.2-31.95v-32.13c0-9.38,3.44-17.48,10.33-24.31,6.89-6.83,15.65-10.71,26.31-11.63v-21.53h8.51v21.53c10.65.93,19.42,4.81,26.31,11.63,6.89,6.83,10.33,14.93,10.33,24.31v38.38h-28.48v-54c0-9.49-4.11-14.24-12.33-14.24s-12.5,4.75-12.5,14.24v39.94c0,11.69,2.83,22,8.51,30.91l35.6,55.39c6.14,9.61,9.2,20.32,9.2,32.12v33.69Z"/>
+        </g>
+      </g>
+      <text class="cls-9" transform="translate(8.5 432.59)"><tspan class="cls-11" x="0" y="0">MONE</tspan><tspan class="cls-12" x="212.19" y="0">Y</tspan><tspan class="cls-15" x="256.7" y="0"> </tspan><tspan class="cls-5" x="272.98" y="0">F</tspan><tspan class="cls-4" x="313.43" y="0">L</tspan><tspan class="cls-3" x="354.98" y="0">O</tspan><tspan class="cls-6" x="405.56" y="0">W</tspan></text>
+      <text class="cls-26" transform="translate(113.52 474.7)"><tspan class="cls-27" x="0" y="0">P</tspan><tspan class="cls-20" x="23.94" y="0">R</tspan><tspan class="cls-7" x="48.8" y="0">O</tspan><tspan class="cls-27" x="74.83" y="0">JE</tspan><tspan class="cls-1" x="119.52" y="0">T</tspan><tspan class="cls-16" x="142.79" y="0">O MA</tspan><tspan class="cls-8" x="239.75" y="0">L</tspan><tspan class="cls-10" x="260.65" y="0">T</tspan><tspan class="cls-2" x="283.01" y="0">A</tspan></text>
+    </g>
+  </g>
+</svg>
