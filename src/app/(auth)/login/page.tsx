@@ -1,7 +1,9 @@
 
 import styles from '../auth.module.css';
-
-export default function Login() {
+async function delay() {
+  return new Promise((resolve) => setTimeout(resolve, 1000));
+}export default async function Login() {
+  await delay();
   return (
     <main>
 
