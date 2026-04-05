@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="BACKGROUND" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 178 223">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#Degradado_sin_nombre_3-2);
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_2);
+      }
+
+      .cls-4 {
+        fill: url(#Degradado_sin_nombre_3);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" y="3" width="182" height="220"/>
+    </clipPath>
+    <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="2288.65" y1="372.6" x2="2329.65" y2="203.6" gradientTransform="translate(2296.69 429.07) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3000ff"/>
+      <stop offset="1" stop-color="#ff31b0"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_3" data-name="Degradado sin nombre 3" x1="2420.36" y1="188.65" x2="2097.36" y2="371.65" gradientTransform="translate(2296.69 429.07) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb50f"/>
+      <stop offset="1" stop-color="#ff31b0"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_3-2" data-name="Degradado sin nombre 3" x1="2263.78" y1="364.74" x2="2214.3" y2="392.78" xlink:href="#Degradado_sin_nombre_3"/>
+  </defs>
+  <g class="cls-5">
+    <path class="cls-3" d="M131,244s24-56-44-78S13,129,18,71-68-2-139,28s33,260,33,260l154,36s61-37,83-80Z"/>
+    <path class="cls-4" d="M87,241s13-57-48-56,10-58,0-98-92-20-136,25-39,121,20,142,137,5,164-13Z"/>
+    <circle class="cls-2" cx="48.5" cy="55.5" r="15.5"/>
+  </g>
+</svg>
