@@ -1,4 +1,4 @@
-export default function Loading(): JSX.Element {
+export default function Loading() {
   return (
     <div className="loader-container">
       <div className="spinner"></div>
