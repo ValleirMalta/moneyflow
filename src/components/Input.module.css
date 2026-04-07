@@ -1,0 +1,144 @@
+/* ─── Field wrapper ─── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+/* ─── Label ─── */
+.label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+  user-select: none;
+}
+
+.required {
+  color: #ef4444;
+  margin-left: 3px;
+}
+
+/* ─── Input wrapper ─── */
+.inputWrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.inputWrap:focus-within {
+  border-color: #07021a;
+  box-shadow: 0 0 0 3px rgba(7, 2, 26, 0.07);
+}
+
+/* ─── Error state ─── */
+.inputWrap.error {
+  border-color: #ef4444;
+}
+
+.inputWrap.error:focus-within {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.inputWrap.error .leftIcon {
+  color: #ef4444;
+}
+
+/* ─── Disabled state ─── */
+.inputWrap.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── Left icon ─── */
+.leftIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 13px;
+  color: #d1d5db;
+  transition: color 0.15s;
+  pointer-events: none;
+}
+
+.leftIcon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.inputWrap:focus-within .leftIcon {
+  color: #07021a;
+}
+
+/* ─── Native input ─── */
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: #111827;
+  padding: 0 13px;
+  height: 44px;
+  font-family: inherit;
+  caret-color: #e09f0d;
+  min-width: 0;
+}
+
+.input::placeholder {
+  color: #d1d5db;
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+/* ─── Eye button ─── */
+.eyeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d1d5db;
+  height: 100%;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.eyeBtn:hover {
+  color: #07021a;
+}
+
+.eyeBtn svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ─── Messages ─── */
+.errorMsg {
+  font-size: 0.75rem;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 0;
+}

@@ -1,38 +1,40 @@
-'use client';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import styles from './auth.module.css';
-import { ReactNode } from 'react';
-interface LayoutProps {
-  children: ReactNode;
-}
+import Image from 'next/image';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-   const pathname = usePathname();
-console.log("pathname", pathname)
-  let title = '';
-  if (pathname?.includes('login')) {
-    title = 'Login';
-  } else if (pathname?.includes('register')) {
-    title = 'Cadastro';
-  } else {
-    title = 'Bem-vindo';
-  }
+export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main className={styles.pageAuth}>
-      <div className={styles.cardAuth}>
-        <div className={styles.headerAuth}>
+    <div className={styles.page}>
+      {/* LEFT PANEL */}
+      <div className={styles.left}>
+        <div className={styles.leftContent}>
           <Image
-              src="/moneyflow-logo-line.svg"
-              alt="logo"
-              width={300}
-              height={300}
-              className={styles.logoAuth}
+            src="/logo.svg"
+            width={500}
+            height={500}
+            alt="Picture of the author"
+            className={styles.logoSvg}
           />
-          <h1>{title}</h1>
+
+          <div className={styles.leftText}>
+            <h1 className={styles.headline}>
+              Controle seu<br />
+              dinheiro com<br />
+              com mais<br />
+              <span className={styles.accent}>clareza.</span>
+            </h1>
+            <p className={styles.sub}>
+              Visualize entradas, saídas e tendências em um só lugar.
+            </p>
+          </div>
         </div>
+
+        <div className={styles.leftFooter}>
+          © 2025 Desenvolvido por Valleir Malta
+        </div>
+      </div>
+      <div className={styles.right}>
         {children}
       </div>
-    </main>
-  )
+    </div>
+  );
 }
