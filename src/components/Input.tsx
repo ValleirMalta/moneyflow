@@ -61,7 +61,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
 
-        {error && <p className={styles.errorMsg}><IconWarn /> {error}</p>}
+        {error && error.trim() !== "" && (
+          <p className={styles.errorMsg}><IconWarn /> {error}</p>
+        )}
         {!error && hint && <p className={styles.hint}>{hint}</p>}
       </div>
     );

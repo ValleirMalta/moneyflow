@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import Input, { IconUser, IconEmail, IconLock } from "@/components/Input";
@@ -18,7 +18,13 @@ export default function RegisterPage() {
   const [confirm, setConfirm] = useState("");
   const [errors, setErrors] = useState<Errors>({});
   const [loading, setLoading] = useState(false);
- 
+  
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) router.replace("/dashboard");
+    });
+  }, []);
+
   function clearError(field: Fields) {
     setErrors(prev => {
       if (!prev[field]) return prev;
