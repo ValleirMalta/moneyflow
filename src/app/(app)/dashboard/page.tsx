@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import LogoutButton from "../../components/Logoutbutton";
+import LogoutButton from "../../../components/Logoutbutton";
 import { createClient } from "@/lib/supabase/client";
 interface UserMetadata {
   nickname: string;
