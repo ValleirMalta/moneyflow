@@ -2,7 +2,7 @@
  
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Input, { IconEmail, IconLock } from "@/components/Input";
+import Input from "@/components/Input";
 import { createClient } from "@/lib/supabase/client";
 import styles from "../auth.module.css";
  
@@ -73,44 +73,38 @@ export default function LoginPage() {
   }
 
   return (
-     <div className={styles.formWrap}>
-      <div className={styles.formHeader}>
-        <h2 className={styles.formTitle}>Bem-vindo de volta</h2>
-        <p className={styles.formSub}>Entre com sua conta para continuar</p>
+    <div className={styles["form-box"]}>
+      <div className={styles["form-header"]}>
+        <h2 className={styles["form-title"]}>Welcome back</h2>
+        <p className={styles["form-subtitle"]}>Log in with your account to continue.</p>
       </div>
- 
-      <div className={styles.fields}>
+
+      <div className={styles["form-fields"]}>
         <Input
           label="E-mail"
           type="email"
           placeholder="seu@email.com"
-          leftIcon={<IconEmail />}
+          leftIcon="email"
           value={email}
           onChange={e => { setEmail(e.target.value); clearError("email"); }}
           error={errors.email}
         />
- 
-        <div>
-          {/* <div className={styles.fieldRow}>
-            <span className={styles.label}>Senha</span>
-            <a href="#" className={styles.forgot}>Esqueceu a senha?</a>
-          </div> */}
-          <Input
-            isPassword
-            placeholder="••••••••"
-            leftIcon={<IconLock />}
-            value={password}
-            onChange={e => { setPassword(e.target.value); clearError("password"); }}
-            error={errors.password}
-          />
-        </div>
- 
+        <Input
+          label="Password"
+          isPassword
+          placeholder="••••••••"
+          leftIcon="password"
+          value={password}
+          onChange={e => { setPassword(e.target.value); clearError("password"); }}
+          error={errors.password}
+        />
+
         <button
-          className={styles.btnForm}
+          className={styles["form-btn"]}
           onClick={handleLogin}
           disabled={loading}
         >
-          {loading ? "Entrando..." : "Entrar"}
+          {loading ? "Entering..." : "Sign in"}
           {!loading && (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="15" height="15">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -118,9 +112,9 @@ export default function LoginPage() {
           )}
         </button>
       </div>
- 
-      <p className={styles.footerLink}>
-        Não tem uma conta? <a href="/register">Criar conta</a>
+
+      <p className={styles["footer-link"]}>
+        You don't have an account? <a href="/register">Create account</a>
       </p>
     </div>
   );

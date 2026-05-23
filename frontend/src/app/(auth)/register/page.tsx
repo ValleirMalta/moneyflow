@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import Input, { IconUser, IconEmail, IconLock } from "@/components/Input";
+import Input from "@/components/Input";
 import styles from "../auth.module.css";
 
 type Fields = "nickname" | "email" | "password" | "confirm";
@@ -75,19 +75,19 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className={styles.formWrap}>
-      <div className={styles.formHeader}>
-        <h2 className={styles.formTitle}>Criar conta</h2>
-        <p className={styles.formSub}>Preencha os dados para começar</p>
+    <div className={styles["form-box"]}>
+      <div className={styles["form-header"]}>
+        <h2 className={styles["form-title"]}>Create account</h2>
+        <p className={styles["form-subtitle"]}>Fill in the details to get started.</p>
       </div>
 
-      <div className={styles.fields}>
+      <div className={styles["form-fields"]}>
         <Input
-          label="Nickname"
+          label="Name"
           type="text"
-          placeholder="Nome"
+          placeholder="Name"
           value={nickname}
-          leftIcon={<IconUser />}
+          leftIcon="user"
           onChange={e => { setNickname(e.target.value); clearError("nickname"); }}
           error={errors.nickname}
         />
@@ -95,37 +95,37 @@ export default function RegisterPage() {
         <Input
           label="E-mail"
           type="email"
-          placeholder="seu@email.com"
-          leftIcon={<IconEmail />}
+          placeholder="your@email.com"
+          leftIcon="email"
           value={email}
           onChange={e => { setEmail(e.target.value); clearError("email"); }}
           error={errors.email}
         />
 
         <Input
-          label="Senha"
+          label="Password"
           isPassword
-          placeholder="Mínimo 6 caracteres"
-          leftIcon={<IconLock />}
+          placeholder="Minimum 6 characters"
+          leftIcon="password"
           value={password}
           onChange={e => { setPassword(e.target.value); clearError("password"); }}
           error={errors.password}
         />
 
         <Input
-          label="Confirmar senha"
+          label="Confirm password"
           isPassword
-          placeholder="Repita a senha"
-          leftIcon={<IconLock />}
+          placeholder="Repeat the password"
+          leftIcon="password"
           onChange={e => { setConfirm(e.target.value); clearError("confirm"); }}
           error={errors.confirm}
         />
         <button
-          className={styles.btnForm}
+          className={styles["form-btn"]}
           onClick={handleRegister}
           disabled={loading}
         >
-          {loading ? "Criando conta..." : "Criar conta"}
+          {loading ? "Creating an account..." : "Create account"}
           {!loading && (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="15" height="15">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -134,8 +134,8 @@ export default function RegisterPage() {
         </button>
       </div>
 
-      <p className={styles.footerLink}>
-        Já tem uma conta? <a href="/login">Entrar</a>
+      <p className={styles["footer-link"]}>
+        You already have an account.? <a href="/login">Login.</a>
       </p>
     </div>
   );

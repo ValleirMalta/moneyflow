@@ -1,132 +1,92 @@
 /* ─── Page Layout ─── */
 .page {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  font-family: 'Geist', system-ui, sans-serif;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;  
+    background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    font-family: 'Geist', system-ui, sans-serif;
 
-/* ─── Left Page ─── */
-.left {
-  position: relative;
-  width: 46%;
-  background: #07021a;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 68px 52px 48px 52px;
-  overflow: hidden;
-}
+    .container {
+      max-width: 450px;
+      width: 100%;
+      padding: 20px 30px;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+      box-shadow: 0 14px 20px -18px rgba(0, 0, 0, 0.12);
 
-.left::before {
-  content: '';
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(224,159,13,.18) 0%, transparent 70%);
-  top: -80px;
-  right: -90px;
-  pointer-events: none;
-}
 
-.left::after {
-  content: '';
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(99,60,220,.2) 0%, transparent 70%);
-  bottom: 60px;
-  left: -70px;
-  pointer-events: none;
-}
+      .logoSvg {
+        width: 150px;
+        height: auto;
 
-.leftContent {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  position: relative;
-  z-index: 1;
-}
+      }
+      .form-box {
+        .form-header {
+          padding: 20px 0;
+          .form-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #07021a;
+            letter-spacing: -0.02em;
+          }
+          .form-subtitle {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            margin: 0;
 
-.logoSvg {
-  width: 210px;
-  height: auto;
-}
+          }
+        }
+        .form-fields {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        .form-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          width: 100%;
+          height: 46px;
+          background: #07021a;
+          color: #fff;
+          border: none;
+          border-radius: 10px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background .18s, transform .12s;
+          font-family: inherit;
+          margin-top: 4px;
+          &:hover { background: #1a0f45; }
+          &:active { transform: scale(0.98); }
+        }
+        .footer-link {
+          font-size: 0.8rem;
+          color: #9ca3af;
+          text-align: center;
+          margin: 10px 0 10px;
+          a {
+            color: #e0bf61;
+            font-weight: 600;
+          }
+        }
+      }
+    }
 
-.leftText {
-  display: flex;
-  flex-direction: column;
-}
 
-.headline {
-  font-size: clamp(1.75rem, 3vw, 3rem);
-  font-weight: 700;
-  line-height: 1.18;
-  color: #fff;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
+  @media (max-width: 480px) {
+   background: #fff;
 
-.accent {
-  color: #e09f0d;
+    .container {
+      background: none;
+      box-shadow: none;
+    }
+  }
 }
-
-.sub {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,.4);
-  line-height: 1.65;
-  margin-top: 12px;
-}
-
-.leftFooter {
-  font-size: 11.5px;
-  color: rgba(255,255,255,.22);
-  position: relative;
-  z-index: 1;
-}
-
-/* ─── Right panel ─── */
-.right {
-  flex: 1;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 40px;
-}
-
-/* ─── Form shared ─── */
-.formWrap {
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.formHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.formTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #07021a;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.formSub {
-  font-size: 0.875rem;
-  color: #9ca3af;
-  margin: 0;
-}
-
-/* ─── Fields ─── */
+/* 
 .fields {
   display: flex;
   flex-direction: column;
@@ -159,8 +119,6 @@
   transition: opacity .15s;
 }
 .forgot:hover { opacity: .7; }
-
-/* ─── Input ─── */
 .inputWrap {
   display: flex;
   align-items: center;
@@ -234,37 +192,6 @@
   gap: 4px;
 }
 
-/* ─── Button ─── */
-.btnForm {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  height: 46px;
-  background: #07021a;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .18s, transform .12s;
-  font-family: inherit;
-  margin-top: 4px;
-}
-
-.btnForm:hover { background: #1a0f45; }
-.btnForm:active { transform: scale(0.98); }
-
-/* ─── Footer link ─── */
-.footerLink {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  text-align: center;
-  margin: 0;
-}
-
 .footerLink a {
   color: #e09f0d;
   font-weight: 600;
@@ -272,10 +199,7 @@
   transition: opacity .15s;
 }
 .footerLink a:hover { opacity: .75; }
-
-/* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .page { flex-direction: column; }
   .left { width: 100%; padding: 32px 24px; min-height: 260px; }
   .right { padding: 32px 20px; }
-}
+} */

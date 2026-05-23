@@ -1,70 +1,72 @@
 "use client";
-
 import { forwardRef, useState, InputHTMLAttributes, ReactNode } from "react";
+
 import styles from "./Input.module.css";
+export type IconName = "search" | "user" | "password" | "email";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
-  hint?: string;
-  leftIcon?: ReactNode;
+  leftIcon?: IconName;
   isPassword?: boolean;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, hint, leftIcon, isPassword = false, id, className, disabled, ...props }, ref) => {
+  ({ label, error, leftIcon, isPassword = false, id, className, disabled, ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const inputId = id ?? (label ? label.toLowerCase().replace(/\s+/g, "-") : undefined);
     const inputType = isPassword ? (showPassword ? "text" : "password") : props.type;
 
     return (
-      <div className={`${styles.field} ${className ?? ""}`}>
+      <div className={styles.field}>
         {label && (
-          <label htmlFor={inputId} className={styles.label}>
+          <label htmlFor={inputId}  className={`${styles.label} ${error ? styles.error : ""}`} >
             {label}
             {props.required && <span className={styles.required}>*</span>}
           </label>
         )}
 
         <div className={[
-          styles.inputWrap,
+          styles["input-container"],
           error ? styles.error : "",
           disabled ? styles.disabled : "",
         ].filter(Boolean).join(" ")}>
 
-          {/* Left icon */}
           {leftIcon && (
-            <span className={styles.leftIcon}>{leftIcon}</span>
+            <span className={styles["left-icon"]}>
+              {leftIcon === "user" && <IconUser />}
+              {leftIcon === "search" && <IconSearch />}
+              {leftIcon === "password" && <IconPassword />}
+              {leftIcon === "email" && <IconEmail />}
+            </span>
           )}
 
           <input
             ref={ref}
             id={inputId}
             disabled={disabled}
-            className={styles.input}
+            className={styles["input-form"]}
             {...props}
             type={inputType}
           />
 
-          {/* Eye toggle for password */}
           {isPassword && (
             <button
               type="button"
-              className={styles.eyeBtn}
+              className={styles["eye-btn"]}
               onClick={() => setShowPassword(p => !p)}
               aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
               tabIndex={-1}
             >
-              {showPassword ? <EyeOff /> : <EyeOn />}
+              {showPassword ? <EyeOn /> : <EyeOff />}
             </button>
           )}
         </div>
 
         {error && error.trim() !== "" && (
-          <p className={styles.errorMsg}><IconWarn /> {error}</p>
+          <p className={styles["error-msg"]}><IconWarn /> {error}</p>
         )}
-        {!error && hint && <p className={styles.hint}>{hint}</p>}
       </div>
     );
   }
@@ -102,8 +104,7 @@ function IconWarn() {
   );
 }
 
-/* ─── Exporting predefined icons for easier use. ─────────── */
-export function IconEmail() {
+function IconEmail() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -112,7 +113,7 @@ export function IconEmail() {
   );
 }
 
-export function IconLock() {
+function IconPassword() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <rect x="3" y="11" width="18" height="11" rx="2"/>
@@ -121,7 +122,7 @@ export function IconLock() {
   );
 }
 
-export function IconUser() {
+function IconUser() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <circle cx="12" cy="8" r="4"/>
@@ -130,7 +131,7 @@ export function IconUser() {
   );
 }
 
-export function IconPhone() {
+function IconPhone() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
@@ -138,7 +139,7 @@ export function IconPhone() {
   );
 }
 
-export function IconSearch() {
+function IconSearch() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
       <circle cx="11" cy="11" r="7"/>
