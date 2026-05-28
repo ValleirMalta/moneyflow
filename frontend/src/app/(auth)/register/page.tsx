@@ -19,11 +19,11 @@ export default function RegisterPage() {
   const [errors, setErrors] = useState<Errors>({});
   const [loading, setLoading] = useState(false);
   
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session) router.replace("/dashboard");
-    });
-  }, []);
+  // useEffect(() => {
+  //   supabase.auth.getSession().then(({ data }) => {
+  //     if (data.session) router.replace("/dashboard");
+  //   });
+  // }, []);
 
   function clearError(field: Fields) {
     setErrors(prev => {
@@ -49,30 +49,30 @@ export default function RegisterPage() {
     return Object.keys(next).length === 0;
   }
  
-  async function handleRegister() {
-    if (!validate()) return;
-    setLoading(true);
+  // async function handleRegister() {
+  //   if (!validate()) return;
+  //   setLoading(true);
 
-     const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { data: { nickname } },
-    });
+  //    const { error } = await supabase.auth.signUp({
+  //     email,
+  //     password,
+  //     options: { data: { nickname } },
+  //   });
  
 
-    if (error) {
-      const msg = error.message.toLowerCase();
-      if (msg.includes("already registered") || msg.includes("user already exists")) {
-        setErrors({ email: "Este e-mail já está cadastrado." });
-      } else {
-        setErrors({ email: "Erro ao criar conta. Tente novamente." });
-      }
-      setLoading(false);
-      return;
-    }
+  //   if (error) {
+  //     const msg = error.message.toLowerCase();
+  //     if (msg.includes("already registered") || msg.includes("user already exists")) {
+  //       setErrors({ email: "Este e-mail já está cadastrado." });
+  //     } else {
+  //       setErrors({ email: "Erro ao criar conta. Tente novamente." });
+  //     }
+  //     setLoading(false);
+  //     return;
+  //   }
  
-    router.push("/dashboard");
-  }
+  //   router.push("/dashboard");
+  // }
 
   return (
     <div className={styles["form-box"]}>
@@ -122,7 +122,7 @@ export default function RegisterPage() {
         />
         <button
           className={styles["form-btn"]}
-          onClick={handleRegister}
+          // onClick={handleRegister}
           disabled={loading}
         >
           {loading ? "Creating an account..." : "Create account"}

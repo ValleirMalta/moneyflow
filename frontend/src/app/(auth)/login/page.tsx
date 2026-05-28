@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Input from "@/components/Input";
-import { createClient } from "@/lib/supabase/client";
+// import { createClient } from "@/lib/supabase/client";
 import styles from "../auth.module.css";
  
 type Fields = "email" | "password";
@@ -11,18 +11,18 @@ type Errors = Partial<Record<Fields, string>>;
 
 export default function LoginPage() {
   const router = useRouter();
-  const supabase = createClient();
+  // const supabase = createClient();
  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<Errors>({});
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session) router.replace("/dashboard");
-    });
-  }, []);
+  // useEffect(() => {
+  //   supabase.auth.getSession().then(({ data }) => {
+  //     if (data.session) router.replace("/dashboard");
+  //   });
+  // }, []);
 
   function clearError(field: Fields) {
     setErrors(prev => {
@@ -46,31 +46,31 @@ export default function LoginPage() {
     return Object.keys(next).length === 0;
   }
  
-  async function handleLogin() {
-    if (!validate()) return;
+  // async function handleLogin() {
+  //   if (!validate()) return;
  
-    setLoading(true);
+  //   setLoading(true);
  
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+  //   const { error } = await supabase.auth.signInWithPassword({ email, password });
  
-    if (error) {
-      const msg = error.message.toLowerCase();
-      if (msg.includes("invalid login credentials") || msg.includes("invalid credentials")) {
-         setErrors({ 
-          email: " ",
-          password: "E-mail ou senha incorretos."
-         });
-      } else if (msg.includes("Email não confirmado")) {
-        setErrors({ email: "Confirme seu e-mail antes de entrar." });
-      } else {
-        setErrors({ password: "Erro ao entrar. Tente novamente." });
-      }
-      setLoading(false);
-      return;
-    }
+  //   if (error) {
+  //     const msg = error.message.toLowerCase();
+  //     if (msg.includes("invalid login credentials") || msg.includes("invalid credentials")) {
+  //        setErrors({ 
+  //         email: " ",
+  //         password: "E-mail ou senha incorretos."
+  //        });
+  //     } else if (msg.includes("Email não confirmado")) {
+  //       setErrors({ email: "Confirme seu e-mail antes de entrar." });
+  //     } else {
+  //       setErrors({ password: "Erro ao entrar. Tente novamente." });
+  //     }
+  //     setLoading(false);
+  //     return;
+  //   }
  
-    router.push("/dashboard");
-  }
+  //   router.push("/dashboard");
+  // }
 
   return (
     <div className={styles["form-box"]}>
@@ -101,7 +101,7 @@ export default function LoginPage() {
 
         <button
           className={styles["form-btn"]}
-          onClick={handleLogin}
+          // onClick={handleLogin}
           disabled={loading}
         >
           {loading ? "Entering..." : "Sign in"}
