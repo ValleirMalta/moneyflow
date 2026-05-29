@@ -1,21 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
-import { createClient } from "@/lib/supabase/client";
+// import { useState, useEffect } from "react";
 import styles from "./dashboard.module.css";
-interface UserMetadata {
-  nickname: string;
-  email?: string;
-}
+// interface UserMetadata {
+//   nickname: string;
+//   email?: string;
+// }
 export default function Dashboard() {
  
- const [user, setUser] = useState<Record<string, any> | null>(null);
-  const supabase = createClient();
-    useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-        setUser(data?.session?.user?.user_metadata as UserMetadata ?? null);
-    });
-    }, []);
-    console.log("user", user)
 return (
     <main  className={styles.dashboard}>
       <header className={styles.title}>

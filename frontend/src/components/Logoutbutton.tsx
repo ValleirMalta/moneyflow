@@ -1,20 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import styles from "./Logoutbutton.module.css";
 
 export default function LogoutButton() {
-  const router = useRouter();
-  const supabase = createClient();
+  // const router = useRouter();
 
-  async function handleLogout() {
-    await supabase.auth.signOut();
-    router.push("/login");
-  }
 
   return (
-    <button className={styles.logoutBtn} onClick={handleLogout}>
+    <button className={styles.logoutBtn}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="16" height="16">
         <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
         <polyline points="16 17 21 12 16 7"/>

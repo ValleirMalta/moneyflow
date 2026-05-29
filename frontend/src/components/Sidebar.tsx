@@ -2,15 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import styles from "./Sidebar.module.css";
 
-interface SidebarProps {
-  nickname: string;
-  email: string;
-}
 
 const navItems = [
   {
@@ -57,27 +52,22 @@ const navItems = [
   },
 ];
 
-export default function Sidebar({ nickname, email }: SidebarProps) {
+export default function Sidebar({  }) {
   const pathname = usePathname();
-  const router = useRouter();
-  const supabase = createClient();
+  // const router = useRouter();
   const [open, setOpen] = useState(false);
 
-  const initials = nickname?.slice(0, 2).toUpperCase() ?? "??";
+  // const initials = nickname?.slice(0, 2).toUpperCase() ?? "??";
 
-  async function handleLogout() {
-    await supabase.auth.signOut();
-    router.push("/login");
-  }
 
   return (
     <>
       <header className={styles.topbar}>
         <div className={styles.userBox}>
-            <div className={styles.avatar}>{initials}</div>
+            {/* <div className={styles.avatar}>{initials}</div> */}
             <div className={styles.userInfo}>
-              <div className={styles.userName}>{nickname}</div>
-              <div className={styles.userEmail}>{email}</div>
+              {/* <div className={styles.userName}>{nickname}</div>
+              <div className={styles.userEmail}>{email}</div> */}
             </div>
         </div>
         <button
@@ -129,14 +119,14 @@ export default function Sidebar({ nickname, email }: SidebarProps) {
 
         <div className={styles.footer}>
           <div className={styles.userBox}>
-            <div className={styles.avatar}>{initials}</div>
+            {/* <div className={styles.avatar}>{initials}</div> */}
             <div className={styles.userInfo}>
-              <div className={styles.userName}>{nickname}</div>
-              <div className={styles.userEmail}>{email}</div>
+              {/* <div className={styles.userName}>{nickname}</div>
+              <div className={styles.userEmail}>{email}</div> */}
             </div>
             <button
               className={styles.logoutBtn}
-              onClick={handleLogout}
+              // onClick={handleLogout}
               title="Sair"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="15" height="15">

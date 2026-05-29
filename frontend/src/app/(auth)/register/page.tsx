@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import Input from "@/components/Input";
 import styles from "../auth.module.css";
 
@@ -10,20 +9,12 @@ type Fields = "nickname" | "email" | "password" | "confirm";
 type Errors = Partial<Record<Fields, string>>;
 export default function RegisterPage() {
   const router = useRouter();
-  const supabase = createClient();
-
   const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [errors, setErrors] = useState<Errors>({});
   const [loading, setLoading] = useState(false);
-  
-  // useEffect(() => {
-  //   supabase.auth.getSession().then(({ data }) => {
-  //     if (data.session) router.replace("/dashboard");
-  //   });
-  // }, []);
 
   function clearError(field: Fields) {
     setErrors(prev => {
@@ -53,11 +44,6 @@ export default function RegisterPage() {
   //   if (!validate()) return;
   //   setLoading(true);
 
-  //    const { error } = await supabase.auth.signUp({
-  //     email,
-  //     password,
-  //     options: { data: { nickname } },
-  //   });
  
 
   //   if (error) {

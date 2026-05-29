@@ -6,7 +6,6 @@ Aplicação de controle financeiro pessoal para gerenciar receitas, despesas e d
 - Next.js
 - TypeScript
 - Tailwind CSS
-- Supabase
 
 ## ▶️ Como rodar
 ```bash
