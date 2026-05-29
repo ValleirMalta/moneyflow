@@ -25,18 +25,18 @@ export default function LoginPage() {
     });
   }
  
-  function validate(): boolean {
-    const next: Errors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // function validate(): boolean {
+  //   const next: Errors = {};
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  
-    if (!email) next.email = "Informe seu e-mail.";
-    else if (!emailRegex.test(email)) next.email = "Informe um e-mail válido.";
+  //   if (!email) next.email = "Informe seu e-mail.";
+  //   else if (!emailRegex.test(email)) next.email = "Informe um e-mail válido.";
  
-    if (!password) next.password = "Informe sua senha.";
+  //   if (!password) next.password = "Informe sua senha.";
  
-    setErrors(next);
-    return Object.keys(next).length === 0;
-  }
+  //   setErrors(next);
+  //   return Object.keys(next).length === 0;
+  // }
  
   // async function handleLogin() {
   //   if (!validate()) return;
@@ -104,7 +104,8 @@ export default function LoginPage() {
       </div>
 
       <p className={styles["footer-link"]}>
-        You don't have an account? <a href="/register">Create account</a>
+        {/* You don't have an account?  */}
+        <a href="/register">Create account</a>
       </p>
     </div>
   );
