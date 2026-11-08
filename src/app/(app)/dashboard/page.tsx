@@ -1,14 +1,21 @@
-"use client";
-// import { useState, useEffect } from "react";
+// "use client";
+import { createClient } from '@/lib/supabase/server'
 import styles from "./dashboard.module.css";
-// interface UserMetadata {
-//   nickname: string;
-//   email?: string;
 // }
-export default function Dashboard() {
- 
+export default async function Dashboard() {
+ const supabase = await createClient();
+ const { data, error } = await supabase.from('profiles').select('*');
 return (
     <main  className={styles.dashboard}>
+
+      {error ? (
+        <p style={{ color: 'red' }}>❌ Erro ao conectar: {error.message}</p>
+      ) : (
+        <div>
+          <p style={{ color: 'green' }}>✅ Conexão com o Supabase local estabelecida com sucesso!</p>
+          <p>Dados encontrados na tabela profiles: {data?.length || 0} registos</p>
+        </div>
+      )}
       <header className={styles.title}>
         <h1>Dashbord</h1>
       </header>
